@@ -1,0 +1,1 @@
+// frequency wali approach try krna h
