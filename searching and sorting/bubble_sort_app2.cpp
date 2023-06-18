@@ -4,8 +4,8 @@ void bubbleSort(int input[], int n)
 { // APP2
     for (int j = n - 1; j >= 1; j--)
     {
-        int counter = 0; // i ka kaam counter kr rha
-        for (int i = 0; i < n - 1 - counter; i++)
+        int counter = 0;                          // i ka kaam counter kr rha
+        for (int i = 0; i < n - 1 - counter; i++) // hm - counter na krien aur counter ka hi overall use agar na krien toh code chl jaega bss no of comparisons /time complexity of the code will increase
         {
             if (input[i] > input[i + 1])
             {
