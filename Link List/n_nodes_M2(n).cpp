@@ -14,8 +14,8 @@ public:
 // har function jo object ke bina call hota hai except for static functions wo class ke bahar define hota hai
 node *takeinput() // is function ka kaam hai to create link list and to return head of that link list
 {                 // arrays hm size puchte thee user se isme hum nai puchege because wohi toh avoid krna tha hamien isliye humne list list introduce kri
-    // hm ya toh data enter krwake aise rakh skte hain ki jaise hi data -1 ho bss kro aur mat badhana LL ::Limitation ye hogi ki -1 ni daal skte
-    // ya phir hum phli node enter krwake yes no puch skte hain user se ki aur krwana chahoge?
+                  // hm ya toh data enter krwake aise rakh skte hain ki jaise hi data -1 ho bss kro aur mat badhana LL ::Limitation ye hogi ki -1 ni daal skte
+                  // ya phir hum phli node enter krwake yes no puch skte hain user se ki aur krwana chahoge?
 
     int data;
     cout << "ENTER DATA";
@@ -25,7 +25,14 @@ node *takeinput() // is function ka kaam hai to create link list and to return h
     while (data != -1)
     {
         node *newnode = new node(data); // isko dyanmically allocate kia hai bcz while loop khtm hone ke baad apki node deallocate na ho jaye
-        if (head == NULL)               // newnode pointer stack memory mein hai wo deallocate ho jayega aur har naye node pe newnode hi point krega jsbki nayi node jo bani hai wo dyanmically bani hai toh wo heap memory mein hai
+                                        // newnode pointer stack memory mein hai wo deallocate ho jayega aur har naye node pe newnode hi point krega, jbki nayi node jo bani hai wo dyanmically bani hai toh wo heap memory mein hai
+
+        //    node *newnode = new node(data); // ISS SE DATA TAB TK RAHEGA JAB TK AAP DELETE NA KRDO
+        // node n(data);  IF WE STATICALLY ALLOCATE NODES HOGA KYA KI HR ITERATION KE BAAD HMARA NODE GAYAB HO GAYEGA KYUNKI USS VARIABLE KA SCOPE TOH SIRF USS FUNCTION ISS USSS ITERATION TAK HAI
+        // head=&n;      WE SHOULDNT DO THIS BECAUSE AISE TOH HEAD UPDATE HOTA RAHEGA AND WE WANT KI HEAD SIRF FIRST ELEMENT KI VALUE RAKHE
+
+        if (head == NULL)
+
         {
             head = newnode;
             tail = newnode;
