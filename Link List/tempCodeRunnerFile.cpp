@@ -9,6 +9,7 @@ public:
     node(int data)
     {
         this->data = data;
+        next = NULL;
     }
 };
 // har function jo object ke bina call hota hai except for static functions wo class ke bahar define hota hai

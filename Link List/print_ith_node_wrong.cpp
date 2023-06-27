@@ -10,6 +10,7 @@ public:
     node(int data)
     {
         this->data = data;
+        next = NULL;
     }
 };
 node *takeinput()
