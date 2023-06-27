@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+class node
+{
+public:
+    int data;
+    node *next;
+
+    node(int data)
+    {
+        this->data = data;
+        next = NULL;
+    }
+};
+node *takeinput()
+{
+
+    int data;
+    cout << "ENTER DATA";
+    cin >> data;
+    node *head = NULL;
+    node *tail = NULL;
+    while (data != -1)
+    {
+        node *newnode = new node(data);
+
+        if (head == NULL)
+
+        {
+            head = newnode;
+            tail = newnode;
+        }
+        else
+        {
+            tail->next = newnode;
+            tail = tail->next;
+        }
+
+        cin >> data;
+    }
+    return head;
+}
+void deleteIthNode(node *head, int i)
+{ // i is basicallly index bro
+    int count = 0;
+    if (head == NULL)
+    {
+        return;
+    }
+    while (temp != NULL && count < i - 1)
+    {
+        temp = temp->next;
+        count++;
+    }
+    if (temp->next != NULL)
+    {
+    }
+}
+
+int main()
+{
+    int i;
+    node *head = takeinput();
+    cout << "ENTER THE VALUE OF i";
+    cin >> i;
+    deleteIthNode(head, i);
+    return 0;
+}
