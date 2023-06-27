@@ -51,7 +51,7 @@ void printIthnode(node *head, int i)
     {
         temp = temp->next;
     }
-    if (temp != NULL) // agr temp aage nikal gya hoga toh phir hm kya hi print krege isliye ye check lga dia
+    if (temp != NULL) // agr temp aage nikal gya hoga (total no of nodes se)toh phir hm kya hi print krege isliye ye check lga dia
     {
         cout << temp->data;
     }
