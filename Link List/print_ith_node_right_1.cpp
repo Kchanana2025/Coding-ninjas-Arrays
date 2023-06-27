@@ -39,24 +39,28 @@ node *takeinput()
     }
     return head;
 }
-int LENGTH(node *head)
-{
-    node *temp = head;
-    int counter = 0;
-    // if(head==NULL)   //zrurat nai hai in dono lines ki if mein aur neeche wala code else mein::NO NEED BAEB
-    // return 0;
-    while (temp != NULL) // YE LOOP NO OF NODES TIMES HI CHALEGA ->COUNTER KI VALUE SAHI AYEGI
+void printIthNode(node *head, int i)
+{ // i is basicallly index bro
+    if (head == NULL)
     {
-        counter++;
-        temp = temp->next;
+        return;
     }
-    return counter;
+    node *temp = head;
+    for (int j = 0; j < i; j++)
+    {
+        if (temp != NULL)
+            temp = temp->next;
+    }
+    if (temp != NULL)
+        cout << temp->data;
 }
 
 int main()
 {
+    int i;
     node *head = takeinput();
-    int counter = LENGTH(head);
-    cout << "LENGTH OF LINK LIST  IS" << counter;
+    cout << "ENTER THE VALUE OF i";
+    cin >> i;
+    printIthNode(head, i);
     return 0;
 }
