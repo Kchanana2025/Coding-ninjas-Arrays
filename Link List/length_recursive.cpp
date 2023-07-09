@@ -8,4 +8,5 @@ int length(Node *head)
     //         return 1;
     int x = length(head->next);
     return x + 1;
+    // OR return 1 + length(head->next);
 }
