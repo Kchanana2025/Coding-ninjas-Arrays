@@ -1,7 +1,10 @@
-Node *InsertNode(Node *head, int i, Node *newnode) // agar length of 5 ki link list mein 5th index se zyada ni daal skte nai toh insert nai hoga normal insertion mein toh 4th index tak allowed tha isme better code likh dia
+Node *InsertNode(Node *head, int i, Node *newnode)
 {
     if (head == NULL && i != 0) // agr i length se bda daal dooge toh idhar ruk jaega
-    // dhyan se socho iss condition ke baare mein apne head ka next bhja aur index km kr dia agr max to max last node bhi insert krni hui apko toh bhi finally i=0 aa jaega last recursion call tak isliye ye contion lgai i>length-1 ko terminate krne waali wali
+    // dhyan se socho iss condition ke baare mein apne head ka next bhja aur index
+    //   km kr dia agr max to max last node bhi insert krni hui apko toh bhi finally i=0 aa jaega last
+    //   recursion call tak isliye ye contion lgai i>length-1 ko terminate krne waali wali
+    // aur user i<0 bhi daal skta hai toh wo bhi tackle ho gya(mtlb waise daalega nai)
     {
         return head;
     }
