@@ -1,6 +1,12 @@
+int length(Node *head) // jo question recursion se ho skta hai usko recursion se kro
+{
+    if (head == NULL)
+        return 0;
+    return 1 + length(head->next);
+}
 Node *appendLastNToFirst(Node *head, int n)
 {
-    if (head == NULL || i == 0 || head->next == NULL || i > length(head) - 1)
+    if (head == NULL || n == 0 || head->next == NULL || n > length(head))
     {
         return head;
     }
