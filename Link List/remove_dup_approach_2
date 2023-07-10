@@ -2,6 +2,7 @@
 // O(1)
 // ham generally link list ke sawalo mein dummy node bnate hain(kyunki head change hota rehta hai aur last mein
 // dummy ka next return krdo toh sahi rehta hai) aur agar iss question mein bhi bnaeinge toh dummy node hmesha sahi head ki traf point krega lekin filhal nai bna rhe kyunki aap head ki node ko delete hi na kro aage waali ko krdo jaise hmne iss question mein kia hai
+// here listNode class and data is val becuase in leetcode's question this was the format
 class Solution
 {
 public:
