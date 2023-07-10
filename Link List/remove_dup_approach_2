@@ -1,0 +1,34 @@
+// O(n)
+// O(1)
+// ham generally link list ke sawalo mein dummy node bnate hain(kyunki head change hota rehta hai aur last mein
+// dummy ka next return krdo toh sahi rehta hai) aur agar iss question mein bhi bnaeinge toh dummy node hmesha sahi head ki traf point krega lekin filhal nai bna rhe kyunki aap head ki node ko delete hi na kro aage waali ko krdo jaise hmne iss question mein kia hai
+class Solution
+{
+public:
+    ListNode *deleteDuplicates(ListNode *head)
+    {
+        if (head == NULL || head->next == NULL)
+            // in cases of 0 nodes or 1 node there
+            // is no point of removing duplicates
+            // hm aise test cases lgate hain taki segmentation fault na aaye
+            // becauseNULL-> will cause segmentation fault
+            return head;
+
+        int flag = 0;
+        ListNode *temp = head;
+        //  ListNode *previous=head;
+        while (temp->next != NULL)
+        {
+            if (temp->val == temp->next->val) // agar value barabar hai toh aage point krao
+            {
+                temp->next = temp->next->next;
+            }
+            else // nai toh aage badho (hmesha aage nai badhna becuase ho skta hai ki ki abhi jo if condition mein changes krne ke baad bhi temp->next ka jo data hai wo temp ke data ke hi barabar ho toh hm aage kaise badh jayenge) eg 1 1 1 2 3
+            {
+                temp = temp->next;
+            }
+        }
+
+        return head; // hmara head badal nai rha bss node*  return type hai bss isiliye return kr rhe
+    }
+};
