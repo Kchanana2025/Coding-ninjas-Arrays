@@ -27,7 +27,7 @@ Node *appendLastNToFirst(Node *head, int n)
     int len = length(head);
     int i = len - n; // index of the node from which we wish to start the link list
     // uss phli node ka index jisko uthake hamien shuru mein lana h
-    if (head == NULL || i > len - 1 || head->next == NULL)
+    if (head == NULL || i > len - 1 || head->next == NULL) // hm ye sari cheezien isliye likh rhe hain kyunki agar nai likhenge toh NULL->ajaega aur segmentataion fault ho jayega
     // i > len - 1 ka mtlb hai ki max to max hm last node se link list start kr skte hain agar i usse bda aaya toh koi appending nai ho skti aur agar i = 0 ho gya mtlb apne sari nodes ko append krne ko keh dia toh wo bhi sahi nai haii
     {
         return head;
