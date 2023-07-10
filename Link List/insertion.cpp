@@ -50,6 +50,7 @@ void print(node *head)
         temp = temp->next;
     }
 }
+// LL=4 mein i=3 max daal skte iss code mein
 node *insertIthnode(node *head, int i, int data)
 {
     int count = 0;
