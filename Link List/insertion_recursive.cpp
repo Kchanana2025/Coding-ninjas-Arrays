@@ -1,3 +1,5 @@
+// O(n)
+// O(n)
 Node *InsertNode(Node *head, int i, Node *newnode)
 {
     if (head == NULL && i != 0) // agr i length se bda daal dooge toh idhar ruk jaega

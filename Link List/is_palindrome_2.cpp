@@ -1,3 +1,6 @@
+// O(n/2+n+n/2)=O(2n)=O(n)
+// O(1)
+// hm length nikalke uska middle nikale bhi swal kr skte hain
 // hm length nikalke uska middle nikale bhi swal kr skte hain
 Node *calculate_mid(Node *head)
 {

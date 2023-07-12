@@ -1,3 +1,5 @@
+// O(n)
+// O(1)
 int findNode(Node *head, int n)
 {
     Node *temp = head;

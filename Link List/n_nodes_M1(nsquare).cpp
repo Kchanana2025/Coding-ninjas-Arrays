@@ -1,3 +1,5 @@
+// O(n^2)
+// O(n)
 #include <iostream> //LINK_LIST INPUT KRKE PRINT KRNA CHAHTE RHE HAI HUM
 using namespace std;
 class node

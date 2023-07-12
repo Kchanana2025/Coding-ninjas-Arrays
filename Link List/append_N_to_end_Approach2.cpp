@@ -1,3 +1,5 @@
+// O(n)
+// O(1)
 int length(Node *head) // jo question recursion se ho skta hai usko recursion se kro
 {
     if (head == NULL)

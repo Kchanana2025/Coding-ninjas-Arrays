@@ -1,45 +1,5 @@
-#include <iostream>
-using namespace std;
-class node
-{
-public:
-    int data;
-    node *next;
-
-    node(int data)
-    {
-        this->data = data;
-        next = NULL;
-    }
-};
-node *takeinput()
-{
-
-    int data;
-    cout << "ENTER DATA";
-    cin >> data;
-    node *head = NULL;
-    node *tail = NULL;
-    while (data != -1)
-    {
-        node *newnode = new node(data);
-
-        if (head == NULL)
-
-        {
-            head = newnode;
-            tail = newnode;
-        }
-        else
-        {
-            tail->next = newnode;
-            tail = tail->next;
-        }
-
-        cin >> data;
-    }
-    return head;
-}
+// time:O(n)
+// space:O(1)
 int LENGTH(node *head)
 {
     node *temp = head;
@@ -52,12 +12,4 @@ int LENGTH(node *head)
         temp = temp->next;
     }
     return counter;
-}
-
-int main()
-{
-    node *head = takeinput();
-    int counter = LENGTH(head);
-    cout << "LENGTH OF LINK LIST  IS" << counter;
-    return 0;
 }

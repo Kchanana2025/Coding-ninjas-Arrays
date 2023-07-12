@@ -1,6 +1,5 @@
 // O(n+m):time
 // O(1):space
-// leetcode solution
 class Solution
 {
 public:

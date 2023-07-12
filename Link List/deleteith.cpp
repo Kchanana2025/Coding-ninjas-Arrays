@@ -1,45 +1,5 @@
-#include <iostream>
-using namespace std;
-class node
-{
-public:
-    int data;
-    node *next;
-
-    node(int data)
-    {
-        this->data = data;
-        next = NULL;
-    }
-};
-node *takeinput()
-{
-
-    int data;
-    cout << "ENTER DATA";
-    cin >> data;
-    node *head = NULL;
-    node *tail = NULL;
-    while (data != -1)
-    {
-        node *newnode = new node(data);
-
-        if (head == NULL)
-
-        {
-            head = newnode;
-            tail = newnode;
-        }
-        else
-        {
-            tail->next = newnode;
-            tail = tail->next;
-        }
-
-        cin >> data;
-    }
-    return head;
-}
+// time:O(n) agar last node delete krne ko kaha hai toh second last node tak iterate kro toh operations will be n-1 which is O(n) hi
+// space:O(1)
 node *deleteIthNode(node *head, int i)
 { // i is basicallly index bro
     int count = 0;

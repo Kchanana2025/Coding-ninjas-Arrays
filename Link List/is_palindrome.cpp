@@ -1,3 +1,5 @@
+// O(n*n/2)=O(n^2)
+// O(n/2)
 bool isPalindrome(Node *head)
 {
     if (head == NULL || head->next == NULL)

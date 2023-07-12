@@ -1,4 +1,6 @@
-// Link list input krwake print krwana chah rhe hain hum
+// time:O(n)
+// space:O(n)
+//  Link list input krwake print krwana chah rhe hain hum
 #include <iostream>
 using namespace std;
 class node

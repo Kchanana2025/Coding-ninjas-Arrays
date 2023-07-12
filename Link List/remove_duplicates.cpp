@@ -1,3 +1,5 @@
+// O(n)
+// O(1)
 Node *removeDuplicates(Node *head)
 {
     if (head == NULL || head->next == NULL)

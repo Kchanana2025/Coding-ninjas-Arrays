@@ -1,3 +1,10 @@
+// O(2n)
+// O(1) iterative length wale ke hisab se dia hai time space
+/**********************************************/
+// for recursive
+// O(n)
+// O(n)
+/**********************/
 // int length(Node *head)
 // {
 //     if (head == NULL)
