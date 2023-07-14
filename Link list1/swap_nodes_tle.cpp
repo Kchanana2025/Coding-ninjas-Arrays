@@ -1,3 +1,5 @@
+O(2n)
+// O(1)//isse purana soln aur usko ek test case mein tle bhi aara tha because of one extra loop
 Node *swapNodes(Node *head, int i, int j)
 {
 
