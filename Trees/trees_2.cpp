@@ -33,7 +33,8 @@ TreeNode<int> *takeinput() // we will return head of the tree so we set the retu
 TreeNode<int> *takeinput_level_wise()
 {
     int root_data;
-    cout << "Enter root data";
+    cout << "Enter root data" << endl;
+    cin >> root_data;
     TreeNode<int> *root = new TreeNode<int>(root_data);
     queue<TreeNode<int> *> pending_nodes; // sirf wo waali nodes hongi inme jinke hmne children abhi nai puche
     pending_nodes.push(root);
@@ -42,17 +43,20 @@ TreeNode<int> *takeinput_level_wise()
         int num_child;
         TreeNode<int> *front = pending_nodes.front();
         pending_nodes.pop(); // usi element ko front se lekar ab delete kr dia
-        cout << "Enter no of children of" << front->data << endl;
+        cout << "Enter no of children of " << front->data << endl;
         cin >> num_child;
         for (int i = 0; i < num_child; i++)
         {
             int data;
+            cout << "Enter " << i << "th child of " << front->data << endl;
             cin >> data;
-            TreeNode<int> *child = new TreeNode<int>(data); // it must be created dyanmicallly taki next iteration mein ye gayab na ho jaye
+            TreeNode<int> *child = new TreeNode<int>(data); // node must be created dyanmicallly taki next iteration
+            // mein ye gayab na ho jaye node lekin child pointer is static wo iteration mein deallocate hoke phirse allocate ho rahi hai
             pending_nodes.push(child);
-            root->children.push_back(child);
+            front->children.push_back(child);
         }
     }
+    return root;
 }
 int main()
 {
