@@ -1,4 +1,3 @@
-#include <limits.h>
 TreeNode<int> *maxDataNode(TreeNode<int> *root)
 {
     if (root == NULL) // ye krna zaruri hai because segmentation fault ajaega agar root NULL hua toh
@@ -11,4 +10,24 @@ TreeNode<int> *maxDataNode(TreeNode<int> *root)
             maximum = Max;
     }
     return maximum;
+}
+//**********************************************************************************
+// OR WE CAN CODE IT THIS WAY
+TreeNode<int> *maxDataNode(TreeNode<int> *root)
+{
+    // Write your code here
+    if (root == NULL)
+        return NULL;
+    TreeNode<int> *Node = root;
+    int max = root->data;
+    for (int i = 0; i < root->children.size(); i++)
+    {
+        TreeNode<int> *temp = maxDataNode(root->children[i]);
+        if (temp->data > max)
+        {
+            max = temp->data;
+            Node = temp;
+        }
+    }
+    return Node;
 }
