@@ -14,7 +14,7 @@ public: // we made it public taki hamien getter aur setter functions na bnane pa
     }
     ~Binary_tree()
     {                // if it is single node then on calling left delete NULL will be called and phir delete NULL ignore ho jata hai kuch ni krta delete NULL
-        delete left; // sbse pehle root ka(provided u have written delete(root)) left ka destructor call hoga aur phir uske left same hi right ke lie hoga aur poora delte will be deleted
+        delete left; // sbse pehle root ka(provided u have written delete root)phir left Node ka destructor call hoga aur phir uske left ka same hi right ke lie hoga aur poora tree will be deleted
         delete right;
     }
 };
