@@ -28,6 +28,8 @@ Binary_tree<int> *takeinput()
     Binary_tree<int> *root = new Binary_tree<int>(rootdata);
     Binary_tree<int> *leftchild = takeinput();
     Binary_tree<int> *rightchild = takeinput();
+    root->left = leftchild;
+    root->right = rightchild;
     return root;
 }
 int main()
