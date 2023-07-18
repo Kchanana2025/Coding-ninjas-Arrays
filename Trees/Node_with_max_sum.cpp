@@ -1,3 +1,4 @@
+// coding ninjas ki solution waaali approach smjhni hai abhiw
 TreeNode<int> *maxSumNode(TreeNode<int> *root)
 {
     if (root == NULL)
