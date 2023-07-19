@@ -4,7 +4,7 @@ int Selectionsort(int *arr, int n)
 {
 
     for (int j = 0; j <= n - 2; j++)
-    { // 0 to n-1 =total n-2 rounds(1 less round because after n-1 rounds array will
+    { // 0 to n-2 =total n-1 rounds(1 less round because after n-1 rounds array will
         // be sorted last element will reach the required place)
         int min = arr[j], minindex = j;
         for (int i = j + 1; i < n; i++)
