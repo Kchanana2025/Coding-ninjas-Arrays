@@ -1,4 +1,5 @@
-// coding ninjas ki solution waaali approach smjhni hai abhiw
+// O(n^2)
+// O(h)
 TreeNode<int> *maxSumNode(TreeNode<int> *root)
 {
     if (root == NULL)

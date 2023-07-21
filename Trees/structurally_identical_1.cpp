@@ -1,6 +1,5 @@
-// 1 2 3 4 0 0
-// 2 2 3 4 0 0
-// this code is wrong does work on this test case
+// O(n)
+// O(h)
 bool areIdentical(TreeNode<int> *root1, TreeNode<int> *root2)
 {
 
@@ -10,9 +9,9 @@ bool areIdentical(TreeNode<int> *root1, TreeNode<int> *root2)
         return false;
     else if (root2 == NULL)
         return false;
-    bool ans;
-    if (root1->data == root2->data)
-        ans = true;
+    bool ans = true;
+    if (root1->data != root2->data)
+        return false;
     if (root1->children.size() != root2->children.size()) // agar size check nai kia aur unequal hua size mein par tree 1 ki values tree 2 jaisi hi hai  toh jitni nodes match ho rahi hai usne
     //  check kr lia ki bhyi ho gayi phir manlo tree1 is small toh loop terminate ho jayega aur ans true return kr dega (mtlb ek case bnta hai jisme ye ho skta hai)
     {

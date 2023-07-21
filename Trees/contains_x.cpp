@@ -1,3 +1,5 @@
+// O(n)
+// O(h)
 bool isPresent(TreeNode<int> *root, int x)
 {
     if (root == NULL)
