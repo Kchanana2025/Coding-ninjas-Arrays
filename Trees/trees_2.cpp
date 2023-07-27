@@ -2,6 +2,8 @@
 #include <iostream>
 #include <queue>
 using namespace std;
+// O(2n)
+// O(h)
 void printtree(TreeNode<int> *root)
 {
     cout << root->data << ":";
@@ -15,6 +17,8 @@ void printtree(TreeNode<int> *root)
         printtree(root->children[i]);
     }
 }
+// O(n)
+// O(h)
 TreeNode<int> *takeinput() // we will return head of the tree so we set the return type as TreeNode *
 {
     int rootdata;

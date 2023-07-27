@@ -6,7 +6,7 @@ Binary_tree<int> *takeinput()
     int rootdata;
     cout << "Enter root data";
     cin >> rootdata;
-    if (rootdata == -1) // ye function recursive toh hai nai toh last mein as a base case use hoga jab aur nodes nai chahie lekin iska use tab hota hai jab 0 nodes ho tree NULL ho
+    if (rootdata == -1) // ye function recursive toh hai nai toh last mein as a base case use hoga jab aur nodes nai chahie lekin iska use tab hota hai jab 0 nodes ho tree NULL ho (as an edge case)
     {
         return NULL;
     }

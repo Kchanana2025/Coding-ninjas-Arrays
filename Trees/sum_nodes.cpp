@@ -1,3 +1,5 @@
+// O(n)
+// O(h)
 int sum_nodes(TreeNode<int> *root)
 {
     if (root == NULL)

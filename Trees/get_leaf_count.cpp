@@ -1,3 +1,5 @@
+// O(n)
+// O(h)
 int getLeafNodeCount(TreeNode<int> *root)
 {
 

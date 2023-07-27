@@ -1,3 +1,5 @@
+// O(n)
+// O(h)
 void preorder(TreeNode<int> *root)
 {
     if (root == NULL) // this is not a base case this is a edge case

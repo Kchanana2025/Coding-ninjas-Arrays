@@ -2,7 +2,8 @@
 #include <iostream>
 #include <queue>
 using namespace std;
-
+// O(n)
+// O(n+h)=O(n)//queue ka space
 TreeNode<int> *takeinput_level_wise()
 {
     int root_data;
@@ -31,6 +32,8 @@ TreeNode<int> *takeinput_level_wise()
     }
     return root;
 }
+// O(2n)
+// O(n+h)=O(n)
 void print_levelwise(TreeNode<int> *root)
 {
     if (root == NULL)

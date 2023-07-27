@@ -1,3 +1,5 @@
+// O(k)
+// O(k)
 void print_at_level_k(TreeNode<int> *root, int k)
 {
     if (root == NULL)
@@ -8,9 +10,10 @@ void print_at_level_k(TreeNode<int> *root, int k)
         cout << root->data;
     }
     else
-    // hmne idhar else isliye likha hai because neeche ke children mein toh k depth/level wala node mil nai skta ab
-    //  ek baar print ho gya hai toh ab jab function return hoga tab hi level k wali nodes milengi
-    {
-        print_at_level_k(root->children[i], k - 1);
-    }
+        // hmne idhar else isliye likha hai because neeche ke children mein toh k depth/level wala node mil nai skta ab
+        //  ek baar print ho gya hai toh ab jab function return hoga tab hi level k wali nodes milengi
+        for (int i = 0; i < root->children.size(); i++)
+        {
+            print_at_level_k(root->children[i], k - 1);
+        }
 }

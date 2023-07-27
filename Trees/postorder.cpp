@@ -1,3 +1,5 @@
+// O(n)
+// O(h)
 void printPostOrder(TreeNode<int> *root)
 {
     if (root == NULL)

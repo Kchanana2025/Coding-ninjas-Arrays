@@ -1,3 +1,5 @@
+// O(h)
+// O(h)
 int getHeight(TreeNode<int> *root)
 {
     if (root == NULL)
@@ -12,10 +14,6 @@ int getHeight(TreeNode<int> *root)
     return height + 1;
 }
 //**********************************************************************************************
-int getHeight(TreeNode<int> *root)
-{
-    // Write your code here
-}
 void getHeight(TreeNode<int> *root, int height, int *max)
 {
     if ((*max) < height)
