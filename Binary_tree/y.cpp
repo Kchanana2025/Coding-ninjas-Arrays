@@ -39,7 +39,7 @@ Binary_tree<int> *takeinput_level_wise()
     }
     Binary_tree<int> *root = new Binary_tree<int>(rootdata);
     queue<Binary_tree<int> *> pending_nodes; // revise initialization syntax
-    pending_nodes.push(root);
+    pending_nodes.push(root);                // contains those nodes jinke children abhi mangne hain aur unke children wapis queue mein push krne hain
     while (pending_nodes.size() != 0)
     {
         Binary_tree<int> *front = pending_nodes.front(); // u can use same name for two things but mindfully idhar ek variable hai aur ek function (queue class ka) toh in this case it is fine
