@@ -1,7 +1,7 @@
 #include "Binary_tree.h"
 #include <iostream>
 using namespace std;
-void print(Binary_tree<int> *root)
+void print(Binary_tree<int> *root) // intro mein bhi print kia hi tha but this is a better way of printing
 {
     if (root == NULL)
         return;
