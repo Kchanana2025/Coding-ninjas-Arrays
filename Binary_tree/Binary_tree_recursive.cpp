@@ -21,7 +21,7 @@ Binary_tree<int> *takeinput()
     int rootdata;
     cout << "ENTER DATA";
     cin >> rootdata;
-    if (rootdata == -1) //-1 is used like a termination
+    if (rootdata == -1) //-1 acts like a terminator ki if u put -1 as a input kahin bhi that means end of nodes left side aur right side mein bhi ye btane ke lie ki input le lia gya hai we enter -1
     {
         return NULL;
     }
@@ -36,6 +36,7 @@ int main()
 {
     Binary_tree<int> *root = takeinput();
     print(root);
-    delete (root);
+    delete (root); // destructor will be called for all nodes just by writing delete root
+    // u can write delete root or delete(root)
     return 0;
 }
