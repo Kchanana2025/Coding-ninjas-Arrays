@@ -1,3 +1,5 @@
+// O(n)
+//  O(h)
 int getSum(BinaryTreeNode<int> *root)
 {
 
