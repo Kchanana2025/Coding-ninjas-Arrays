@@ -1,6 +1,6 @@
 BinaryTreeNode<int> *buildtreehelper(int *preOrder, int *inOrder, int preS, int preE, int InS, int InE)
 {
-    if (InE < InS) // base case
+    if (InE < InS) // base case OR if(preE<preS)//dono likh ke or lgane ki zrurat nai hai becuase size same(assume kr rhe hain size same hai (itna galat input koi kyu hi daalega)) hai ur agar ek mein start aage ho jayega toh dusre mein bhi ho jayega
         return NULL;
     // small calculation
     int rootindex = -1;
