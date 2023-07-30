@@ -1,4 +1,7 @@
-// generic trees mein base case hota hi nai hai
+// T(n)=2T(n/2)+O(1)average
+// T(n)=2T(n-1)+O(1)worst
+// O(n)
+// generic trees mein base case hota hi nai hai.root==NULL is edge case in case of generic trees
 void InOrder(BinaryTreeNode<int> *root)
 {
     if (root == NULL) // base case

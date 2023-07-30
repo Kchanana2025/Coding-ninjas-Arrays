@@ -1,3 +1,6 @@
+// T(n)=T(n/2)+c->O(n)
+// T(n)=T(n-1)+c->O(n)
+// space:O(h)
 bool isNodePresent(BinaryTreeNode<int> *root, int x)
 {
     if (root == NULL)
