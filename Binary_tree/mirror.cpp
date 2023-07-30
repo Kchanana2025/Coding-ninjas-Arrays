@@ -1,4 +1,4 @@
-// T(n)=T(n/2)+c->O(n)
+// T(n)=2T(n/2)+c->O(n)
 // T(n)=T(n-1)+c->O(n)
 // space:O(h)
 void mirrorBinaryTree(BinaryTreeNode<int> *root)

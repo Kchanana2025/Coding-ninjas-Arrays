@@ -1,5 +1,6 @@
 //  average case:T(n)=2*T(n/2)+kn; O(nlogn)
 // worst case: T(n)=2*T(n-1)+kn;O(n^2)
+// space:O(h)
 BinaryTreeNode<int> *buildTree(int *postorder, int postLength, int *inorder,
                                int inLength)
 {

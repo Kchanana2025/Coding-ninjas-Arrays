@@ -1,3 +1,6 @@
+// average:T(n)=2T(n/2)+c->O(n)
+// worst:T(n)=T(n-1)+c->O(n)
+// space:O(h)
 // 1 2 3 4 5 6 7 -1 -1 -1 -1 8 9 -1 -1 -1 -1 -1 -1
 int num_nodes(Binary_tree<int> *root)
 {

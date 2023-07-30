@@ -1,3 +1,6 @@
+// average:T(n)=2T(n/2)+c->O(n)
+// worst:T(n)=T(n-1)+c->O(n)
+// space:O(h)
 int height(BinaryTreeNode<int> *root)
 {
     if (root == NULL)

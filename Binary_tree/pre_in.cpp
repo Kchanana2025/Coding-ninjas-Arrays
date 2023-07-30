@@ -1,6 +1,9 @@
 
-//  average case:T(n)=2*T(n/2)+kn; O(nlogn)
-// worst case: T(n)=2*T(n-1)+kn;O(n^2)BinaryTreeNode<int> *buildtreehelper(int *preOrder, int *inOrder, int preS, int preE, int InS, int InE)
+// time
+//   average case:T(n)=2*T(n/2)+kn; O(nlogn)
+//  worst case: T(n)=2*T(n-1)+kn;O(n^2)
+// space:O(h)
+BinaryTreeNode<int> *buildtreehelper(int *preOrder, int *inOrder, int preS, int preE, int InS, int InE)
 {
     if (InE < InS) // base case OR if(preE<preS)//dono likh ke or lgane ki zrurat nai hai becuase size same(assume kr rhe hain size same hai (itna galat input koi kyu hi daalega)) hai ur agar ek mein start aage ho jayega toh dusre mein bhi ho jayega
         return NULL;

@@ -1,5 +1,5 @@
-// T(n)=T(n/2)+c->O(n)
-// T(n)=T(n-1)+c->O(n)
+// average:T(n)=2T(n/2)+c->O(n)
+// worst:T(n)=T(n-1)+c->O(n)
 // space:O(h)
 
 // dekho ans ussi smay return krdo jaise hi ans=true hua there is no point ki ans true hone ke baad bhi aap left chk

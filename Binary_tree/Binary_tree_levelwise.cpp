@@ -2,18 +2,7 @@
 #include <iostream>
 #include <queue>
 using namespace std;
-// 1 2 3 4 5 6 7 - 1 - 1 - 1 - 1 8 9 - 1 - 1 - 1 - 1
-int num_nodes(Binary_tree<int> *root)
-{
 
-    if (root == NULL) // binary trees mein base case bahot zaruri hota hai
-        return 0;
-    int ans = 1;
-    int ans1 = num_nodes(root->left);
-    int ans2 = num_nodes(root->right);
-    ans += ans1 + ans2;
-    return ans;
-}
 void print_level_wise(Binary_tree<int> *root)
 {
     if (root == NULL) // agar khali tree hai sirf tab hi zarurat hai iss condition ki.
@@ -82,6 +71,24 @@ int main()
 {
     Binary_tree<int> *root = takeinput_level_wise();
     print_level_wise(root);
-    num_nodes(root);
+    cout << num_nodes(root);
     return 0;
 }
+
+// for takeinput level wise
+
+// The given code is used to take input for a binary tree level-wise and returns the root of the binary tree. Let's analyze the time and space complexity of this code:
+
+// Time Complexity:
+// The code uses a while loop that runs as long as there are elements in the queue (pending_nodes). For each node, it takes constant time to read its data and create its left and right children (if they exist). Since each node is processed once, the time complexity is proportional to the number of nodes in the binary tree, which is O(n), where 'n' is the number of nodes in the tree.
+
+// Space Complexity:
+// The code uses a queue (pending_nodes) to keep track of nodes whose children are yet to be created. The maximum number of elements that can be in the queue at any point during the execution of the code is the maximum number of nodes at any level of the binary tree. In a balanced binary tree, the maximum number of nodes at any level would be half of the total number of nodes. Hence, the maximum size of the queue would be O(n/2) = O(n).
+
+// Additionally, the code uses space for creating Binary_tree nodes. The space required for creating nodes is proportional to the number of nodes in the binary tree, which is O(n).
+
+// Overall, the space complexity is O(n) + O(n) = O(n).
+
+// for printing levelwise:
+//  O(n)each node is processed once
+//  O(n)queue's space

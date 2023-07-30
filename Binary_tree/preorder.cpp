@@ -1,6 +1,7 @@
 // T(n)=2T(n/2)+O(1)average
 // T(n)=2T(n-1)+O(1)worst
 // O(n)
+// space:O(h)
 // generic trees mein base case hota hi nai hai usme root==NULL wala edge case hota hai
 void preOrder(BinaryTreeNode<int> *root)
 {

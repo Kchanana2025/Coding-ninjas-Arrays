@@ -1,6 +1,9 @@
 #include "Binary_tree.h"
 #include <iostream>
 using namespace std;
+// average:T(n)=2T(n/2)+c->O(n)
+// worst:T(n)=T(n-1)+c->O(n)
+// space:O(h)
 void print(Binary_tree<int> *root) // intro mein bhi print kia hi tha but this is a better way of printing
 {
     if (root == NULL)
@@ -16,6 +19,9 @@ void print(Binary_tree<int> *root) // intro mein bhi print kia hi tha but this i
     print(root->left);
     print(root->right);
 }
+// average:T(n)=2T(n/2)+c->O(n)
+// worst:T(n)=T(n-1)+c->O(n)
+// space:O(h)
 Binary_tree<int> *takeinput()
 {
     int rootdata;
