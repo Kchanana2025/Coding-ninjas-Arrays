@@ -1,3 +1,7 @@
+// ye diameter wale swal ki trah
+//  time-O(n*h)
+//  space-O(h)
+// to optimize this code we need to use class
 #include <stdlib.h> //i didnt know about this library
 int height(BinaryTreeNode<int> *root)
 {
