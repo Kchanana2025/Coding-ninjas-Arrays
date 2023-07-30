@@ -9,8 +9,8 @@ pair<int, int> getMinAndMax(BinaryTreeNode<int> *root) // baar baar jaake presha
     if (root == NULL)
     {
         pair<int, int> p;
-        p.first = INT_MAX; // first is minmum
-        p.second = INT_MIN;
+        p.first = INT_MAX;  // first is minmum
+        p.second = INT_MIN; // second is maximum
         return p;
     }
     pair<int, int> left_ans = getMinAndMax(root->left);   // it will return pair that will contain min and max from left subtree
