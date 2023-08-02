@@ -71,7 +71,7 @@ int main()
 {
     Binary_tree<int> *root = takeinput_level_wise();
     print_level_wise(root);
-    cout << num_nodes(root);
+    // cout << num_nodes(root);
     return 0;
 }
 
