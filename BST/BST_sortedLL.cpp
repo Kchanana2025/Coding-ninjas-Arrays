@@ -1,3 +1,5 @@
+// O(n)
+// O(n)
 pair<Node<int> *, Node<int> *> constructLinkedList_helper(BinaryTreeNode<int> *root)
 {
     if (root == NULL)
