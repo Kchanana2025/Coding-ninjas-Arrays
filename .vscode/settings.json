@@ -3,6 +3,9 @@
         "xiosbase": "cpp",
         "utility": "cpp",
         "vector": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "algorithm": "cpp",
+        "xlocale": "cpp",
+        "xutility": "cpp"
     }
 }

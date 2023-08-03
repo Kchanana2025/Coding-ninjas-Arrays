@@ -1,5 +1,6 @@
 // O(n)
-// O(n)
+// O(h)//link list ko space mein consider nai krte because it is used to store answer it is not used to calculate answer
+// this function will return a pair in which head first will have head and ssecond will have tail
 pair<Node<int> *, Node<int> *> constructLinkedList_helper(BinaryTreeNode<int> *root)
 {
     if (root == NULL)
