@@ -16,14 +16,14 @@ pair<Node<int> *, Node<int> *> constructLinkedList_helper(BinaryTreeNode<int> *r
     Node<int> *new_head = head;
     Node<int> *new_tail = tail;
 
-    if (left_data.second != NULL)
+    if (left_data.second != NULL) // this case is very important because it can be NULL
     {
         left_data.second->next = head;
         new_head = left_data.first;
     }
 
     pair<Node<int> *, Node<int> *> right_data = constructLinkedList_helper(root->right);
-    if (right_data.first != NULL)
+    if (right_data.first != NULL) // this case is very important because it can be NULL
     {
         head->next = right_data.first;
         new_tail = right_data.second;
