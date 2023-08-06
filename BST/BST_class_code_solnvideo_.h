@@ -1,37 +1,19 @@
-/**********************************************************
-
-    Following is the Binary Tree Node class structure
-
-    template <typename T>
-    class BinaryTreeNode {
-        public:
-        T data;
-        BinaryTreeNode<T> *left;
-        BinaryTreeNode<T> *right;
-
-        BinaryTreeNode(T data) {
-            this->data = data;
-            left = NULL;
-            right = NULL;
-        }
-    };
-
-***********************************************************/
-
+// #include "Binary_tree.h" //nai kia because .cpp mein file mein ye file include krne se phle Binary_tree.h ko include kr lia humne
 class BST
 {
     // Define the data members
-    BinaryTreeNode<int> *root;
+    Binary_tree<int> *root;
 
     // private functions
-    BinaryTreeNode<int> *find_minimum(BinaryTreeNode<int> *root)
+    Binary_tree<int> *find_minimum(Binary_tree<int> *root)
     {
+        Binary_tree<int> *ans = root;
         if (root->left != NULL)
-            find_minimum(root->left);
-        return root;
+            ans = find_minimum(root->left);
+        return ans;
     }
 
-    BinaryTreeNode<int> *delete_helper(int data, BinaryTreeNode<int> *root)
+    Binary_tree<int> *delete_helper(int data, Binary_tree<int> *root)
     {
 
         if (root == NULL)
@@ -57,47 +39,54 @@ class BST
             {
                 if (root->left == NULL)
                 {
-                    return root->right;
+                    // delete root;// delete root call krne se wo apne neeche poore ke poore tree ko delete kr degi aur uske baad root->right return krne ka toh waise hi sense nai bnta
+                    // return root->right;
+                    Binary_tree<int> *temp = root->right;
+                    root->right = NULL;
+                    delete root;
+                    return temp;
                 }
                 if (root->right == NULL)
                 {
-                    return root->left;
+                    Binary_tree<int> *temp = root->left;
+                    root->left = NULL;
+                    delete root;
+                    return temp;
                 }
             }
+            // jahan upar se kuch connection krna hai wahan root ko return kr dia nai toh agar wahan pr hi connection ho skta h curreny root ke sath toh wahin pr hi kr dia
             else // two children
             {
-                BinaryTreeNode<int> *min_node = find_minimum(root->right);
-                //  cout<<min_node->data;
+                Binary_tree<int> *min_node = find_minimum(root->right);
                 root->data = min_node->data;
-                // cout<<root->data;
-                // cout<<root->left->data;
-                root->right = delete_helper(min_node->data, min_node); // root->right nai kr rakha tha maine ye mistake tha
+
+                root->right = delete_helper(min_node->data, root->right); // root->right min_node->right nai rakhna yaha galat ayega ans dry run krke dekhlo
 
                 // 2 children wala case left se min nikalke bhi kr skte
             }
         }
     }
-    BinaryTreeNode<int> *insert_helper(int data, BinaryTreeNode<int> *root)
+    Binary_tree<int> *insert_helper(int data, Binary_tree<int> *root)
     {
         if (root == NULL)
         {
-            BinaryTreeNode<int> *node = new BinaryTreeNode<int>(data);
+            Binary_tree<int> *node = new Binary_tree<int>(data);
             root = node;
             return root;
         }
         else if (data > root->data)
         {
-            BinaryTreeNode<int> *node = insert_helper(data, root->right);
+            Binary_tree<int> *node = insert_helper(data, root->right);
             root->right = node;
         }
         else
         {
-            BinaryTreeNode<int> *node = insert_helper(data, root->left);
+            Binary_tree<int> *node = insert_helper(data, root->left);
             root->left = node;
         }
         return root;
     }
-    bool getData_helper(int data, BinaryTreeNode<int> *root)
+    bool getData_helper(int data, Binary_tree<int> *root)
     {
         if (root == NULL)
             return false;
@@ -113,7 +102,7 @@ class BST
             return getData_helper(data, root->right);
         }
     }
-    void print_helper(BinaryTreeNode<int> *root)
+    void print_helper(Binary_tree<int> *root)
     {
         if (root == NULL)
             return;

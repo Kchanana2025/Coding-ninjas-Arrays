@@ -1,3 +1,7 @@
+// O(h)
+// O(h)
+// iske code mein changes krke sahi file BST_class.cpp hai
+// ye file is for looking agt mistakes
 #include "Binary_tree.h"
 class BST
 {
@@ -19,6 +23,7 @@ class BST
         }
     }
     Binary_tree<int> *insert_helper(int data, Binary_tree<int> *root)
+    // our data type is pointer of type node because root might be NULL usme root insert karoge na
     {
         if (root == NULL)
         {
@@ -44,10 +49,10 @@ class BST
             find_maximum(root->right);
         return root;
     }
-    Binary_tree<int> *delete_helper(int data, Binary_tree<int> *root)
+    Binary_tree<int> *delete_helper(int data, Binary_tree<int> *root) // delet is an inbuilt keyword so we are using delet_helper as function name
+                                                                      //  our data type is pointer of type node because root might change  na
     {
-
-        if (root == NULL)
+        if (root == NULL) // jo node dundh rhe thee wo mili nai/shuru mein hi root NULL tha
         {
             return root;
         }
@@ -62,7 +67,8 @@ class BST
             {
                 if (root->left == NULL)
                 {
-                    return root->right;
+                    // delete root;agar ye call kr dia toh ye apne aae ka sara ka sara tree delete kr dega
+                    // return root->right;
                 }
                 if (root->right == NULL)
                 {
@@ -93,12 +99,12 @@ public:
     }
     void insert(int data)
     {
-        root = insert_helper(data, root); // bhai root update bhi toh karoge jab insertion ho jayegi
-    }
+        this->root = insert_helper(data, this->root); // bhai root update bhi toh karoge jab insertion ho jayegi
+    }                                                 // bina this ke bhi kr skte hain
     void delete_root(int data)
     {
-        root = delete_helper(data, root); // bhai root update bhi toh karoge jab deletion ho jayegi
-    }
+        this->root = delete_helper(data, this->root); // bhai root update bhi toh karoge jab deletion ho jayegi
+    }                                                 // bina this ke bhi kr skte hain
 };
 int main()
 {
