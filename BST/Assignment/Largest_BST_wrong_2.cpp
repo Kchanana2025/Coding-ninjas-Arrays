@@ -1,4 +1,3 @@
-
 #include <limits.h>
 class helper_class
 {
@@ -12,62 +11,98 @@ helper_class helper_largestBSTSubtree(BinaryTreeNode<int> *root)
 {
     if (root == NULL)
     {
-        helper_class h;
-        h.minimum = INT_MAX;
-        h.maximum = INT_MIN;
-        h.isBST = false;
-        h.height = 0;
-        return h;
+        helper_class obj;
+        obj.minimum = INT_MAX;
+        obj.maximum = INT_MIN;
+        obj.isBST = false;
+        obj.height = 0;
+        return obj;
     }
     if (root->left == NULL && root->right == NULL)
     {
-        helper_class h;
-        h.minimum = root->data;
-        h.maximum = root->data;
-        h.isBST = true;
-        h.height = 1;
-        return h;
+        helper_class obj;
+        obj.minimum = root->data;
+        obj.maximum = root->data;
+        obj.isBST = true;
+        obj.height = 1;
+        return obj;
     }
-    helper_class h1 = helper_largestBSTSubtree(root->left);
-    helper_class h2 = helper_largestBSTSubtree(root->right);
-    helper_class h;
+    helper_class ansL = helper_largestBSTSubtree(root->left);
+    helper_class ans_R = helper_largestBSTSubtree(root->right);
+    helper_class obj;
 
     if (root->left != NULL && root->right != NULL)
     {
-        if (h1.maximum < root->data && root->data < h2.minimum && h1.isBST && h2.isBST)
+        if (ansL.maximum < root->data && root->data < ans_R.minimum && ansL.isBST && ans_R.isBST)
         {
-            h.minimum = h1.minimum;
-            h.maximum = h2.maximum;
-            h.height = 1 + max(h1.height, h2.height);
-            h.isBST = true;
-            return h;
+            obj.minimum = ansL.minimum;
+            obj.maximum = ans_R.maximum;
+            obj.height = 1 + max(ansL.height, ans_R.height);
+            obj.isBST = true;
+            return obj;
         }
     }
     if (root->left != NULL)
     {
-        if (h1.maximum < root->data && h1.isBST)
+        if (ansL.maximum < root->data && ansL.isBST)
         {
-            h.isBST = true;
-            h.height = h1.height + 1;
-            h.minimum = h1.minimum;
-            h.maximum = root->data;
-            return h;
+            obj.isBST = true;
+            obj.height = ansL.height + 1;
+            obj.minimum = ansL.minimum;
+            obj.maximum = root->data;
+            return obj;
         }
     }
     if (root->right != NULL)
     {
-        if (h2.minimum > root->data && h2.isBST)
+        if (ans_R.minimum > root->data && ans_R.isBST)
         {
-            h.isBST = true;
-            h.height = h2.height + 1;
-            h.minimum = root->data;
-            h.maximum = h2.maximum;
-            return h;
+            obj.isBST = true;
+            obj.height = ans_R.height + 1;
+            obj.minimum = root->data;
+            obj.maximum = ans_R.maximum;
+            return obj;
         }
+    }
+    if (ansL.height && ans_R.height)
+    {
+        helper_class obj;
+        if (ansL.height > ans_R.height)
+        {
+            obj.minimum = ansL.minimum;
+            obj.maximum = ansL.maximum;
+            obj.isBST = true;
+            obj.height = ansL.height;
+            return obj;
+        }
+        else if (ansL.height < ans_R.height)
+        {
+            obj.minimum = ans_R.minimum;
+            obj.maximum = ans_R.maximum;
+            obj.isBST = true;
+            obj.height = ans_R.height;
+            return obj;
+        }
+    }
+    if (ansL.height)
+    {
+        obj.minimum = ansL.minimum;
+        obj.maximum = ansL.maximum;
+        obj.isBST = true;
+        obj.height = ansL.height;
+        return obj;
+    }
+    if (ans_R.height)
+    {
+        obj.minimum = ans_R.minimum;
+        obj.maximum = ans_R.maximum;
+        obj.isBST = true;
+        obj.height = ans_R.height;
+        return obj;
     }
 }
 int largestBSTSubtree(BinaryTreeNode<int> *root)
 {
-    helper_class h = helper_largestBSTSubtree(root);
-    return h.height;
+    helper_class obj = helper_largestBSTSubtree(root);
+    return obj.height;
 }
