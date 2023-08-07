@@ -33,7 +33,7 @@ void printNodesSumToS(BinaryTreeNode<int> *root, int sum)
         {
             j--;
         }
-        else if (arr[i] + arr[j] < sum)
+        else if (arr[i] + arr[j] < sum) // last mein else if hi likho toh bdia hai kyuunki upar koi mistake hoti hai wo else mein fall krta hai aur jis swal mein small si mistake thi ab usme itna bdi mistake bn jati hai
         {
             i++;
         }
