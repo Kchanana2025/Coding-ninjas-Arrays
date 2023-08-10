@@ -60,7 +60,7 @@ public:
             {
                 minindex = pq[child_index_left] > pq[child_index_right] ? child_index_right : child_index_left;
             }
-            else if (child_index_left < pq.size()) // right mein check krne ki zarurat nai hai CBT hi hai wo
+            else if (child_index_left < pq.size()) // when only left exists
             {
                 minindex = child_index_left;
             }
