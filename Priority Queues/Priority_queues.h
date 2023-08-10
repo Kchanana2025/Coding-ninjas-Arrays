@@ -22,6 +22,7 @@ public:
 
         return pq[0];
     }
+    // O(logn)
     void insert(int element)
     {
         pq.push_back(element);
@@ -42,6 +43,7 @@ public:
             parent_index = (child_index - 1) / 2;
         }
     }
+    // O(logn)
 
     int removeMin()
     {
