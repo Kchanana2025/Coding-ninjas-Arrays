@@ -38,42 +38,44 @@ public:
         child_index = parent_index;
         parent_index = (child_index - 1) / 2;
     }
-    int remove_min()
-    {
-        parentindex = 0;
+    // wrong code
+    //  int remove_min()
+    //  {
+    //      parentindex = 0;
 
-        while (parentindex < pq.size())
-        {
-            child_index_left = 2 * parent_index_left + 1;
-            child_index_right = 2 * parent_index_right + 1;
-            if (child_index_left < pq.size() && child_index_right < pq.size())
-            {
-                minindex = pq[child_index_left] > pq[child_index_right] ? child_index_right : childindex_left;
-                if (pq[minindex] < pq[parentindex])
-                {
-                    swap(pq[minindex], pq[parentindex]);
-                    parentindex = minindex;
-                }
-                else
-                {
-                    break;
-                }
-            }
-            else if (child_index_left < pq.size()) // right mein check krne ki zarurat nai hai CBT hi hai wo
-            {
-                if (pq[child_index_left] < pq[PI])
-                {
-                    swap(pq[child_index_left], pq[PI]);
-                    PI = child_index_left;
-                }
-            }
-            else
-            {
-                break;
-            }
-        }
-    }
-    int remove_min_anothertry() // too much of repetitive code
+    //     while (parentindex < pq.size())
+    //     {
+    //         child_index_left = 2 * parent_index_left + 1;
+    //         child_index_right = 2 * parent_index_right + 1;
+    //         if (child_index_left < pq.size() && child_index_right < pq.size())
+    //         {
+    //             minindex = pq[child_index_left] > pq[child_index_right] ? child_index_right : childindex_left;
+    //             if (pq[minindex] < pq[parentindex])
+    //             {
+    //                 swap(pq[minindex], pq[parentindex]);
+    //                 parentindex = minindex;
+    //             }
+    //             else
+    //             {
+    //                 break;
+    //             }
+    //         }
+    //         else if (child_index_left < pq.size()) // right mein check krne ki zarurat nai hai CBT hi hai wo
+    //         {
+    //             if (pq[child_index_left] < pq[PI])
+    //             {
+    //                 swap(pq[child_index_left], pq[PI]);
+    //                 PI = child_index_left;
+    //             }
+    //         }
+    //         else
+    //         {
+    //             break;
+    //         }
+    //     }
+    // }
+
+    int remove_min_anothertry() // too much of repetitive code but correct code
     {
         int removeMin()
         {
@@ -86,7 +88,7 @@ public:
             while (parentindex < pq.size())
             {
                 int child_index_left = 2 * parentindex + 1;
-                int child_index_right = 2 * parentindex + 1;
+                int child_index_right = 2 * parentindex + 2;
                 if (child_index_left < pq.size() && child_index_right < pq.size())
                 {
                     int minindex = pq[child_index_left] > pq[child_index_right] ? child_index_right : child_index_left;
