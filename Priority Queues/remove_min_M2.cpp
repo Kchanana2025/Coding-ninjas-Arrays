@@ -1,3 +1,4 @@
+// method 1 is one function in priority_queues.h
 int remove_min()
 {
     if (isEmpty())
