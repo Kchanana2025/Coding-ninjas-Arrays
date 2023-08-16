@@ -1,3 +1,5 @@
+// O(n)
+// O(h)
 int count_nodes(TreeNode<int> *root) // bss root wala kaam aap krdo baki recursion sambhal lega
 {
     if (root == NULL)

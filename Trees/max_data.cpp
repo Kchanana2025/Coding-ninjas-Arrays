@@ -1,3 +1,5 @@
+//O(n)
+//O(h)
 TreeNode<int> *maxDataNode(TreeNode<int> *root)
 {
     if (root == NULL) // ye krna zaruri hai because segmentation fault ajaega agar root NULL hua toh

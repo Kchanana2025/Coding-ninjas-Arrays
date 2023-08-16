@@ -1,5 +1,6 @@
 // O(n)
 // O(1)
+
 bool isMaxHeap(int arr[], int n)
 {
     // Write your code here

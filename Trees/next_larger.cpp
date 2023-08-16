@@ -1,3 +1,5 @@
+// O(n)
+// O(h)
 #include <limits.h>
 TreeNode<int> *getNextLargerElement(TreeNode<int> *root, int x)
 {

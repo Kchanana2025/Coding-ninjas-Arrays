@@ -9,9 +9,9 @@ Binary_tree<int> *takeinput()
     cin >> rootdata;
     if (rootdata == -1) // as a edge case
         return;
-    Binary_tree<int> *node1 = new Binary_tree<int>(rootdata);
+    Binary_tree<int> *root = new Binary_tree<int>(rootdata);
     queue<Binary_tree<int> *> pending_nodes;
-    pending_nodes.push(node1);
+    pending_nodes.push(root);
     while (pending_nodes.size() != 0)
     {
         Binary_tree<int> *front = pending_nodes.front();
@@ -38,4 +38,5 @@ Binary_tree<int> *takeinput()
 }
 int main()
 {
+    takei
 }

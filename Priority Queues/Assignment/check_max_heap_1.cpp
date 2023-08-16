@@ -1,16 +1,18 @@
+// O(n)
+// O(1)
+
 bool isMaxHeap(int arr[], int n)
 {
-    if (n == 0)
-        return true;
-    int parent = 0;
-    int leftchildindex = 2 * parent + 1;
-    int rightchildindex = 2 * parent + 1;
-    if (leftchildindex < n)
+    // Write your code here
+    for (int i = 0; i < n; i++)
     {
-        if ((rightchildindex < n && arr[0] < arr[rightchildindex]) || arr[0] < leftchildindex)
-        {
+        int leftChildIndex = 2 * i + 1;
+        int rightChildIndex = 2 * i + 2;
+        if (leftChildIndex < n && rightChildIndex < n &&
+            (!(arr[leftChildIndex] < arr[i] && arr[rightChildIndex] < arr[i])))
             return false;
-        }
+        else if (leftChildIndex < n && !(arr[leftChildIndex] < arr[i]))
+            return false;
     }
-    return isMaxHeap(arr + 1, n - 1);
+    return true;
 }
