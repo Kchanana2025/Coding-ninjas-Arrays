@@ -5,7 +5,7 @@ int highestFrequency(int arr[], int n)
     int index = 0, max = 0;
     for (int i = n - 1; i >= 0; i--)
     {
-        if (m.count(arr[i]) == 0)
+        if (m.count(arr[i]) == 0) // aise krne ki zarurat nai hai seedha m.count(arr[i])++ krdo .in approach 3 and approach 2 code is exactly same except for this thing
             m[arr[i]] = 1;
         else
         {
