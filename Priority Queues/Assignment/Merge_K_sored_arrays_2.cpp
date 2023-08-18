@@ -1,3 +1,5 @@
+// O(n*logk)
+// O(n+k)=O(n)
 #include <vector>
 #include <queue>
 // every element that is inserted in priority queue will contain a value an index i and an index j
