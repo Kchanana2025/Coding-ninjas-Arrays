@@ -1,3 +1,5 @@
+// O(n)
+// O(n)
 #include <unordered_map>
 #include <limits.h>
 int highestFrequency(int arr[], int n)
