@@ -45,7 +45,7 @@ public:
     }
     ~ourmap()
     {
-        for (int i = 0; i < numbuckets; i++)
+        for (int i = 0; i < numBuckets; i++)
         {
             delete buckets[i]; // firstly we deleted all link lists recursively through constructor
         }
@@ -60,7 +60,7 @@ private:
     int getBucketIndex(string key)
     {
         // calculation of hashcode
-        int hashcode = 0;
+        int hashCode = 0;
         int currentCoeff = 1;
         for (int i = key.length() - 1; i >= 0; i--)
         {
@@ -70,13 +70,14 @@ private:
             currentCoeff = currentCoeff % numBuckets;
         }
         // compression
-        return hashcode % numBuckets;
+        return hashCode % numBuckets;
     }
     void rehash()
     {
         MapNode<V> **temp = buckets;
-        buckets = new MApNode<V> *[(2 * numBuckets)];
-        for (int i = 0; i < 2 * numBuckets; i++)
+        int a = 2;
+        buckets = new MApNode<V> *[2 * numBuckets];
+        for (int i = 0; i < (2 * numBuckets); i++)
         {
             buckets[i] = NULL; // garbage addresses must not be present
         }
