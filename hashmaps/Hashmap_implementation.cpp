@@ -97,7 +97,45 @@ public:
     }
     V remove(string key) // delete key value pair(of the  key accepted as a parameter ) and return its value
     {
+        int bucketIndex = getBucketIndex(key);
+        MapNode<V> *head = buckets[bucketIndex];
+        MapNode<V> *prev = NULL;
+        while (head != NULL) // we are finding key in link list jab tak head NULL ke barabar na ho jaye
+        {
+            if (head->key == key)
+            {
+                if (prev == NULL) // this means that first element of link list contained the key in that case prev is NULL,ye wala case alag se isliye banana padha because NULL-> se segmentation fault ajata agar ye prev->next=head->next krte ,secondly bucketindex pr head bhi toh update karoge
+                {
+                    buckets[bucketIndex] = head->next; // bucketindex will now contain new head
+                }
+                else
+                {
+                    prev->next = head->next;
+                }
+                V value = head->value;
+                head->next = NULL; // agar aise hi delete head likh denge toh recursive destructor call hoga aur head ke aage ki poori link list delete ho jayegi isliye hmne head->next=NULL kr dia
+                delete head;
+                count--;
+                return value;
+            }
+            prev = head;
+            head = head->next;
+        }
+        return 0; // agar cantrol yaha pr aaya hai toh mtlb key present hi nai hogi toh return 0 krdo
+                  // 0 kisi node ki value actually bhi ho skti thi pr filhal hmare pass option nai tha toh hmne 0 return kr dia
     }
-    //
+    V getValue(string key)
+    {
+        int bucketIndex = getBucketIndex(key);
+        MapNode<V> *head = buckets[bucketIndex];
+        while (head != NULL)
+        {
+            if (head->key == key)
+            {
+                return head->value;
+            }
+        }
+        return 0;
+    }
 };
 // array will contain  of heads of all link lists so its data type will be of double pointer
