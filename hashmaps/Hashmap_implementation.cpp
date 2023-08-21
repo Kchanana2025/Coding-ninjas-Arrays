@@ -75,7 +75,6 @@ private:
     void rehash()
     {
         MapNode<V> **temp = buckets;
-        int a = 2;
         buckets = new MApNode<V> *[2 * numBuckets];
         for (int i = 0; i < (2 * numBuckets); i++)
         {
