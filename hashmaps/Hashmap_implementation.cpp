@@ -100,4 +100,4 @@ public:
     }
     //
 };
-// array will contain  of head of link list so its data type will be of double pointer
+// array will contain  of heads of all link lists so its data type will be of double pointer
