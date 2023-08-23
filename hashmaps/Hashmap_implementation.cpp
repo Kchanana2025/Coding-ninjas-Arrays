@@ -193,7 +193,7 @@ int main()
         map.insert(key, value);
         cout << map.getloadfactor() << endl;
     }
-    cout << map.size(); // 10
+    cout << map.size() << endl; // 10
     map.remove("abc2");
     map.remove("abc7");
     for (int i = 0; i < 10; i++)
