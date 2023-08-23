@@ -1,8 +1,10 @@
+// O(n)
+// O(n)
 #include <unordered_map>
 string uniqueChar(string str)
 {
     unordered_map<char, int> mp;
-    string s;
+    string ans;
     for (int i = 0; str[i] != '\0'; i++)
     {
         if (mp.count(str[i]) > 0)
@@ -12,8 +14,8 @@ string uniqueChar(string str)
         else
         {
             mp[str[i]]++;
-            s += str[i];
+            ans += str[i];
         }
     }
-    return s;
+    return ans;
 }

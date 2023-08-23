@@ -75,7 +75,7 @@ private:
     void rehash()
     {
         MapNode<V> **temp = buckets;
-        buckets = new MApNode<V> *[2 * numBuckets];
+        buckets = new MapNode<V> *[numBuckets * 2];
         for (int i = 0; i < (2 * numBuckets); i++)
         {
             buckets[i] = NULL; // garbage addresses must not be present
