@@ -1,3 +1,5 @@
+// O(N*M)
+// O(N*M)
 class TrieNode
 {
 public:
