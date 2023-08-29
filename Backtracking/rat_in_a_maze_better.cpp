@@ -1,6 +1,8 @@
 // time ka utna nai socha jata bracktracking ke sawalo mein kyunki kyunki sari paths toh dekhne hi hain
 #include <bits/stdc++.h>
 using namespace std;
+if (x < 0 || x >= n || y < 0 || y >= n || maze[x][y] == 0 || solution[x][y] == 1)
+    return;
 void ratInamaze_help(int maze[][20], int **solution, int x, int y, int n)
 {
 
@@ -15,11 +17,9 @@ void ratInamaze_help(int maze[][20], int **solution, int x, int y, int n)
             }
         }
         cout << endl;
-        //   solution[x][y] = 0;// isko nai bhi lgaoge toh bhi chl jayega because solution[x][y] agar 1 hai toh return kro wali condition hi neeche hai
+        solution[x][y] = 0; // isko isliye lgaya kyunki upar add jayega 2nd solution ke waqt
         return;
     }
-    if (x < 0 || x >= n || y < 0 || y >= n || maze[x][y] == 0 || solution[x][y] == 1)
-        return;
 
     solution[x][y] = 1;
     ratInamaze_help(maze, solution, x + 1, y, n);
