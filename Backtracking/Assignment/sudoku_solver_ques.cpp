@@ -76,7 +76,7 @@ bool solveSudoku(int grid[][N])
     // after this function call, row and col will contain indexes of empty space in grid
     // now lets place values in that empty space
 
-    for (int i = 1; i < N; i++)
+    for (int i = 1; i <= N; i++)
     {
         if (isSafe(grid, row, col, i))
         {
@@ -95,31 +95,30 @@ int main()
 {
     int grid[N][N];
     // we will input  the sudoku
+    // for (int i = 0; i < N; i++)
+    // {
+    //     string s; // length of the input string would be 9
+    //     cin >> s;
+    //     for (int j = 0; j < s.length(); j++)
+    //     {
+    //         grid[i][j] = s[j] - '0'; // if s[j]=0 ,grid will store value as zero
+    //         // this converts char 0 to int 0
+    //     }
+    // }
+
     for (int i = 0; i < N; i++)
     {
-        string s; // length of the input string would be 9
-        cin >> s;
-        for (int j = 0; j < s.length(); j++)
-        {
-            grid[i][j] = s[j] - '0'; // if s[j]=0 ,grid will store value as zero
-        }
+        for (int j = 0; j < N; j++)
+            cin >> grid[i][j]; // 0 if place is empty
     }
-    // we will send sudoku to solveSudoku
     if (solveSudoku(grid))
-    {
-        for (int i = 0; i < N; i++)
-        {
-            for (int j = 0; j < N; j++)
-            {
-                cout << grid[i][j];
-            }
-            cout << endl;
-        }
-    }
+        cout << "true";
     else
-    {
-        cout << "INVALID SUDOKU";
-    }
+        cout << "false";
+
+    cout << endl;
+
+    // we will send sudoku to solveSudoku
 
     return 0;
 }
