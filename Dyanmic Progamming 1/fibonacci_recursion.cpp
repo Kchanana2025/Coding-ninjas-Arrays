@@ -1,3 +1,5 @@
+// O(2^n)
+// O(n)
 #include <iostream>
 using namespace std;
 int fibo(int n)
