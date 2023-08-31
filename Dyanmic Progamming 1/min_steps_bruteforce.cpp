@@ -1,8 +1,9 @@
-
+// O(2^n)
+// O(n)
 int countMinStepsToOne(int n)
 {
-    int x = INT_MAX, y = INT_MAX, z = INT_MAX;
-    // ye krna isliye zaruri hai because hr baar x,y,z ko ki value assign hogi hi ye zaruri nai hai because hr no toh 2,3 dono se divisible nai hota so we need to make sure that jiski value hi calculate nai hui lets say /3 ki wo toh ans mein include na hi hoisliye usko INT_MAX rakh dia
+    int x, y = INT_MAX, z = INT_MAX;
+    // ye krna isliye zaruri hai because hr baar x,y,z ko ki value assign hogi hi ye zaruri nai hai because hr no toh 2,3 dono se divisible nai hota so we need to make sure that jiski value hi calculate nai hui lets say /3 ki wo toh minimum calculate krte smay include na hi ho isliye usko INT_MAX rakh dia
     //  base case
     if (n == 1)
     {
