@@ -1,3 +1,5 @@
+// O(n)
+// O(n)+O(n)(call stack and array)
 int countMinStepsToOne_helper(int n, int *output)
 {
     int x, y = INT_MAX, z = INT_MAX;

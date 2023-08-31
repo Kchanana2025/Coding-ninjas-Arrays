@@ -1,3 +1,5 @@
+// O(n)
+// O(n)(only array)
 #include <limits.h>
 int countMinStepsToOne_helper(int n, int *output)
 {
