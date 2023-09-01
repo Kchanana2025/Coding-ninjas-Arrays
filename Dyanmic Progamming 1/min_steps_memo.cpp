@@ -5,7 +5,7 @@ int countMinStepsToOne_helper(int n, int *output)
 {
     int x = INT_MAX, y = INT_MAX, z = INT_MAX;
     //  base case
-    if (n == 1)
+    if (n == 1) // base case wali call i.e n=1 wali call save krni hai toh krlo array mein nai toh koi need nai hai.becayse jab bhi n=1 call hogi base case se return hi ho jayega.uske neeche wale if mein ghusne se phle (neeche wale if se hi output[1] ki value return hoti)
     {
         return 0;
     }
