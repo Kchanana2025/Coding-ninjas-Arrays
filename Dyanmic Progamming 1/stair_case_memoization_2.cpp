@@ -1,3 +1,5 @@
+// O(n)
+// O(2n)=O(n)
 #include <bits/stdc++.h>
 using namespace std;
 int stair_case(int n, int *ans)
