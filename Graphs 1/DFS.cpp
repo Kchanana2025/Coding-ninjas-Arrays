@@ -53,5 +53,13 @@ int main()
     // array as pointer and matrix as double pointer jata hai(jab dyanmic hote hai array aur matrix) toh hmien uska size sath  bhjna padhta hai
     // array as pointer and matrix as pointer jata hai(jab static hote hai array aur matrix) toh hmien uska size sath  bhjna padhta hai
 
+    // delete memory
+    for (int i = 0; i < n; i++) // adjancy matrix deleted
+    {
+        delete edges[i];
+    }
+
+    delete visited; // visited array deleted
+
     return 0;
 }
