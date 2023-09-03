@@ -6,6 +6,8 @@
         "stack": "cpp",
         "algorithm": "cpp",
         "xlocale": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "iostream": "cpp",
+        "queue": "cpp"
     }
 }

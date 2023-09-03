@@ -1,25 +1,24 @@
-int min_count(int n)
+int minCount(int n)
 {
     // base case
     if (n == 1)
     {
         return 1;
     }
+
+    if (n == 0)
+    {
+        return 0;
+    }
     int k = sqrt(n);
-    int min = INT_MAX;
+    int mini = INT_MAX; // min is a predefined keyword
     for (int i = 1; i <= k; i++)
     {
-        int ans = 1 + min_count(n - i ^ 2);
-        if (min > ans)
+        int ans = 1 + minCount(n - (i * i)); // i^2 is i XOR 2
+        if (mini > ans)
         {
-            min = ans;
+            mini = ans;
         }
     }
-    return min;
-}
-int main()
-{
-    int n;
-    cin >> n;
-    min_count(n);
+    return mini;
 }
