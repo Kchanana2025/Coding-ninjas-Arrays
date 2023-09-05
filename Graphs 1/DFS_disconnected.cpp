@@ -1,3 +1,5 @@
+// O(V+E)
+// O(V^2)
 #include <iostream>
 using namespace std;
 void print(int **edges, int n, int sv, bool *visited) // the third parameter is the starting vertex jahan se traversal shuru krna hai
@@ -19,6 +21,22 @@ void print(int **edges, int n, int sv, bool *visited) // the third parameter is 
             print(edges, n, i, visited);
         }
     }
+}
+void print_helper(int **edges, int n)
+{
+    bool *visited = new bool[n]; // we have created visited array to keep track of vertices we have already printed
+    for (int i = 0; i < n; i++)
+    {
+        visited[i] = false; // nothing is visited initially
+    }
+    for (int sv = 0; sv < n; sv++)
+    {
+        if (!visited[sv]) // jo bhi vertex visited nai hoga uspe dfs lag jayega
+        {
+            print(edges, n, sv, visited);
+        }
+    }
+    delete[] visited;
 }
 int main()
 {
@@ -44,22 +62,17 @@ int main()
         edges[f][s] = 1;
         edges[s][f] = 1;
     }
-    bool *visited = new bool[n]; // we have created visited array to keep track of vertices we have already printed
-    for (int i = 0; i < n; i++)
-    {
-        visited[i] = false; // nothing is visited initially
-    }
-    print(edges, n, 0, visited); // print graph
+
+    print_helper(edges, n); // print graph
     // array as pointer and matrix as double pointer jata hai(jab dyanmic hote hai array aur matrix) toh hmien uska size sath  bhjna padhta hai
     // array as pointer and matrix as pointer jata hai(jab static hote hai array aur matrix) toh hmien uska size sath  bhjna padhta hai
 
     // delete memory
     for (int i = 0; i < n; i++) // adjancy matrix deleted
     {
-        delete edges[i];
+        delete[] edges[i];
     }
-
-    delete visited; // visited array deleted
+    delete[] edges;
 
     return 0;
 }
