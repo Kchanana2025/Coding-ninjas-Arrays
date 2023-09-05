@@ -1,25 +1,32 @@
 // O(V+E)(hr ek vertex aur uske edges ke hi baar traverse hote hain.Na vertex repeat hota hai na edges repeat hote hain.isliye complexity is O(V+E)
 // O(V^2) adjancy matrix
 #include <iostream>
+#include <vector>
 using namespace std;
 // we will set sv(starting vertex) as starting point given in question and then apply dfs and then sv ke adjancent vertices mein check krke baki jagah pr check krne ke lie recursion ko kehdo
-bool haspath(int **edges, int n, bool *visited, int sv, int ev) // ev stands for end vertex
+vector<int> getpath(int **edges, int n, bool *visited, int sv, int ev) // ev stands for end vertex
 {
     visited[sv] = true;
+    vector<int> v;
     if (sv == ev) // I missed this case
     {
-        return true;
+        v.push_back(sv);
+        return v;
     }
     for (int i = 0; i < n; i++) // jitne bhi adjacent vertices honge sv(starting vertex) ke sabhi ko visited krte hai
     {
         if (edges[sv][i] == 1 && !visited[i]) // edge exists between sv and i
         {
 
-            if (haspath(edges, n, visited, i, ev))
-                return true; // ek starting vertex ke kitne sare edges hai agar kisi se bhi path aa gya toh true therefore hm sari paths check krke bilkul last mein false return kr rhe hain
+            vector<int> v = getpath(edges, n, visited, i, ev);
+            if (v.size() != 0)
+            {
+                v.push_back(sv);
+                return v;
+            }
         }
     }
-    return false; // kisi bhi starting vertex se nikalte hue edges ke through agar answer nai aaya toh return false
+    return v;
 }
 int main()
 {
@@ -50,11 +57,11 @@ int main()
     {
         visited[i] = false; // nothing is visited initially
     }
-    if (haspath(edges, n, visited, sv, ev))
-        cout << "true";
-    else
-        cout << "false";
-
+    vector<int> v = getpath(edges, n, visited, sv, ev);
+    for (int i = 0; i < v.size(); i++)
+    {
+        cout << v[i];
+    }
     // delete memory
     for (int i = 0; i < n; i++) // adjancy matrix deleted
     {
