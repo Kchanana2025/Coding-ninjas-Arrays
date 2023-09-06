@@ -1,28 +1,39 @@
-// O(V+E)(hr ek vertex aur uske edges ke hi baar traverse hote hain.Na vertex repeat hota hai na edges repeat hote hain.isliye complexity is O(V+E)
-// O(V^2) adjancy matrix
+// O(V+E)
+// O(V^2)
 #include <iostream>
-#include <vector>
+#include <queue>
+#include <unordered_map>
 using namespace std;
-// we will set sv(starting vertex) as starting point given in question and then apply dfs and then sv ke adjancent vertices mein check krke baki jagah pr check krne ke lie recursion ko kehdo
-vector<int> getpath(int **edges, int n, bool *visited, int sv, int ev) // ev stands for end vertex
+vector<int> getPath_BFS(int **edges, int n, bool *visited, int sv, int ev)
 {
-    visited[sv] = true;
     vector<int> v;
-    if (sv == ev) // I missed this case
+    queue<int> pending_vertices; // this queue will contain vertices we have seen but yet not printed
+    unordered_map<int, int> ourmap;
+    pending_vertices.push(sv);
+    visited[sv] = true;
+    while (!pending_vertices.empty())
     {
-        v.push_back(sv);
-        return v;
-    }
-    for (int i = 0; i < n; i++) // jitne bhi adjacent vertices honge sv(starting vertex) ke sabhi ko visited krte hai
-    {
-        if (edges[sv][i] == 1 && !visited[i]) // edge exists between sv and i
+
+        int currentvertex = pending_vertices.front();
+        pending_vertices.pop();
+        if (currentvertex == ev) // path mil gya ajao vector mein insert krien
+        {
+            v.push_back(currentvertex);
+            while (ourmap.count(currentvertex) > 0)
+            {
+                currentvertex = ourmap[currentvertex];
+                v.push_back(currentvertex);
+            }
+            return v;
+        }
+        for (int i = 0; i < n; i++)
         {
 
-            vector<int> v = getpath(edges, n, visited, i, ev);
-            if (v.size() != 0)
+            if (edges[currentvertex][i] == 1 && !visited[i])
             {
-                v.push_back(sv);
-                return v;
+                ourmap[i] = currentvertex;
+                visited[i] = true;
+                pending_vertices.push(i);
             }
         }
     }
@@ -57,10 +68,10 @@ int main()
     {
         visited[i] = false; // nothing is visited initially
     }
-    vector<int> v = getpath(edges, n, visited, sv, ev);
+    vector<int> v = getPath_BFS(edges, n, visited, sv, ev);
     for (int i = 0; i < v.size(); i++)
     {
-        cout << v[i];
+        cout << v[i] << " ";
     }
     // delete memory
     for (int i = 0; i < n; i++) // adjancy matrix deleted

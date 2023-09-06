@@ -8,6 +8,7 @@
         "xlocale": "cpp",
         "xutility": "cpp",
         "iostream": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "unordered_map": "cpp"
     }
 }
