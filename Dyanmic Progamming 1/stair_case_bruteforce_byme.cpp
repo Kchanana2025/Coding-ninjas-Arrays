@@ -1,4 +1,4 @@
-// O(2^n)
+// O(3^n)
 // O(n)
 #include <bits/stdc++.h>
 using namespace std;

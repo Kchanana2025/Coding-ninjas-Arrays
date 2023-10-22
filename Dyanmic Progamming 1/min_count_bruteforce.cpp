@@ -1,24 +1,20 @@
+#include <bits/stdc++.h>
 int minCount(int n)
 {
-    // base case
+    // Write your code here
     if (n == 1)
     {
         return 1;
     }
-
     if (n == 0)
     {
         return 0;
     }
-    int k = sqrt(n);
-    int mini = INT_MAX; // min is a predefined keyword
-    for (int i = 1; i <= k; i++)
+    int x = sqrt(n);
+    int minimum = INT_MAX; // min is a predefined keyword isliye hi minimum rakh dia naamvariable ka
+    for (int i = 1; i <= x; i++)
     {
-        int ans = 1 + minCount(n - (i * i)); // i^2 is i XOR 2
-        if (mini > ans)
-        {
-            mini = ans;
-        }
+        minimum = min(minimum, minCount(n - i * i)); // i^2 is i XOR 2
     }
-    return mini;
+    return minimum + 1;
 }
