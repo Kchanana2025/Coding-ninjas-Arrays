@@ -1,5 +1,5 @@
 // O(n)
-// O(n)+O(n)
+// O(n)+O(n)(n for call stack and n for array)
 #include <iostream>
 using namespace std;
 int fibo_helper(int *ans, int n)

@@ -1,6 +1,8 @@
 // O(n)
 // O(n)+O(n)(call stack and array)
 // memoization
+// bss yehi krna hai memo mein mein ki recursive call krne se phle answer array mein check krlo ki agar wo answer present hai ya nai
+// agar hai toh return krdo nai toh calculate kro phir save kro aur phir return kro
 int countMinStepsToOne_helper(int n, int *output)
 {
     int x = INT_MAX, y = INT_MAX, z = INT_MAX;
@@ -31,8 +33,8 @@ int countMinStepsToOne_helper(int n, int *output)
 }
 int countMinStepsToOne(int n)
 {
-    int *output = new int[n + 1];
-    for (int i = 0; i <= n; i++) // hm apne output array ko kisi bhi value se initially set kr skte thee provided wo value answer ka part nai honi chahie eg -1 kabhi bhi no of steps ke barabar nai ho skta
+    int *output = new int[n + 1]; // hm hemsha n+1 ka size lete hain taki indexes 0 to n hoien aur hm ith index pr ith fibbonaachi no rakh skien valid for all dp questions
+    for (int i = 0; i <= n; i++)  // hm apne output array ko kisi bhi value se initially set kr skte thee provided wo value answer ka part nai honi chahie eg -1 kabhi bhi no of steps ke barabar nai ho skta
     {
         output[i] = -1;
     }

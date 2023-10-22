@@ -1,3 +1,5 @@
+// O(n)
+// O(n)(O(n) is space taken by array)
 #include <iostream>
 using namespace std;
 int fibo(int n)

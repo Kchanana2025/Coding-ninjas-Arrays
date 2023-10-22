@@ -3,8 +3,8 @@
 #include <limits.h>
 int countMinStepsToOne_helper(int n, int *output)
 {
-    output[1] = 0;
-    for (int i = 2; i <= n; i++)
+    output[1] = 0;               // itertively kr rhe hain hum question ko array mein values save krni hai kuch return nai krna
+    for (int i = 2; i <= n; i++) // seedha 2 se start krdo mt socho ki n/2 ka value kahan se layenge .the point is n/2 ka value is 1 hi 1 se chota toh hoega nai .toh n=2 ,n=3 ka base case likhne ki zarurat nai hai
     {
         int y = INT_MAX, z = INT_MAX;
         int x = output[i - 1] + 1; // isko toh zarurat nai hai m
