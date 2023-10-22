@@ -1,8 +1,8 @@
-// O(2^n)
-// O(n)
-// must watch needcode video
 #include <bits/stdc++.h>
 using namespace std;
+int staircase_helper(int x, int n)
+{
+}
 int stair_case(int x, int n)
 {
     const long long int factor = 1000000007; // this is important const long long int

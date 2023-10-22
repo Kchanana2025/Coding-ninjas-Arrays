@@ -15,6 +15,8 @@ int stair_case(int n)
         return 0;
     }
     sum += stair_case(n - 1) % factor;
+    sum = sum % factor;
+
     sum += stair_case(n - 2) % factor;
     sum = sum % factor; // hr sum ke baad %factor krna hota h,taki int ki range se bahar chla jaye
     sum += stair_case(n - 3) % factor;
