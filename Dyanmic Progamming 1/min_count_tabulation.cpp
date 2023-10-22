@@ -1,4 +1,5 @@
-
+// O(n)
+// O(n)
 #include <bits/stdc++.h>
 int minCount(int n)
 {

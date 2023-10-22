@@ -1,3 +1,5 @@
+// O(n)
+// O(2n)
 #include <bits/stdc++.h>
 #include <algorithm>
 #include <math.h>

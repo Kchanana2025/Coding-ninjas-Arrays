@@ -9,6 +9,7 @@
         "xutility": "cpp",
         "iostream": "cpp",
         "queue": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "system_error": "cpp"
     }
 }
