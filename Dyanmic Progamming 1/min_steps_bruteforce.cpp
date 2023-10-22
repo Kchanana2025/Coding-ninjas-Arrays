@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+#include <limits.h>
 // O(2^n)
 // O(n)
 int countMinStepsToOne(int n)
@@ -23,4 +26,8 @@ int countMinStepsToOne(int n)
     int ans = min(x, min(y, z)); // thing to remember
 
     return ans + 1;
+}
+int main()
+{
+    cout << countMinStepsToOne(10);
 }

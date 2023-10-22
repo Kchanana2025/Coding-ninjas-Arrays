@@ -2,7 +2,7 @@
 // O(n)+O(n)(call stack and array)
 // memoization
 // bss yehi krna hai memo mein mein ki recursive call krne se phle answer array mein check krlo ki agar wo answer present hai ya nai
-// agar hai toh return krdo nai toh calculate kro phir save kro aur phir return kro
+// agar hai toh return krdo nai toh calculate kro phir save kro array mein aur phir return kro
 int countMinStepsToOne_helper(int n, int *output)
 {
     int x = INT_MAX, y = INT_MAX, z = INT_MAX;

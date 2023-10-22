@@ -1,5 +1,5 @@
 // O(2^n)
-// O(n)
+// O(n)(because for space complexity we find the maximum depth of the tree that is n)
 #include <iostream>
 using namespace std;
 int fibo(int n)
