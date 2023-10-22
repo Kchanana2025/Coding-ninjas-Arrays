@@ -1,10 +1,12 @@
 // O(2^n)
 // O(n)
+// must watch needcode video
 #include <bits/stdc++.h>
 using namespace std;
 int stair_case(int x, int n)
 {
-    const long long int factor = 1000000007;
+    const long long int factor = 1000000007; // this is important const long long int
+    // dont write 10^9+7;
     int sum = 0;
     if (x == n)
     {
