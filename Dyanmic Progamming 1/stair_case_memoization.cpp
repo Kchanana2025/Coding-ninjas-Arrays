@@ -1,6 +1,6 @@
 // O(n)
 //  O(2n)=O(n)
-//  this method is wrong ans[0] pr final ans hoga
+//  aviod this method  ans[0] pr final ans hoga
 //  toh ye swal iss tarike se  karo hi mt
 
 #include <bits/stdc++.h>
