@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int staircase_helper(int x, int n)
-{
-}
-int stair_case(int x, int n)
+int staircase_helper(int x, int n, int *ans)
 {
     const long long int factor = 1000000007; // this is important const long long int
     // dont write 10^9+7;write it 1000000007
@@ -16,12 +13,27 @@ int stair_case(int x, int n)
     {
         return 0;
     }
-    sum += stair_case(x + 1, n) % factor;
-    sum += stair_case(x + 2, n) % factor;
+    if (ans[n] != -1)
+    {
+        return ans[n];
+    }
+    sum += staircase_helper(x + 1, n, ans) % factor;
+    sum += staircase_helper(x + 2, n, ans) % factor;
     sum = sum % factor; // hr sum ke baad %factor krna hota h,taki int ki range se bahar chla jaye
-    sum += stair_case(x + 3, n) % factor;
+    sum += staircase_helper(x + 3, n, ans) % factor;
     sum = sum % factor;
-    return sum;
+    ans[n] = sum;
+    return ans[n];
+}
+int stair_case(int x, int n)
+{
+    int *ans = new int[n + 1];
+    for (int i = 0; i <= n; i++)
+    {
+        ans[i] = -1;
+    }
+    int solution = staircase_helper(x, n, ans);
+    return solution;
 }
 int main()
 {

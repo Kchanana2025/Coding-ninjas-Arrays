@@ -2,10 +2,12 @@
 //  O(2n)=O(n)
 //  this method is wrong ans[0] pr final ans hoga
 //  toh ye swal iss tarike se  karo hi mt
+
 #include <bits/stdc++.h>
 using namespace std;
-void stair_case(int x, int n, int *ans)
+int staircase_helper(int x, int n, int *ans)
 {
+    const long long int factor = 1000000007;
     int sum = 0;
     if (x == n)
     {
@@ -15,16 +17,27 @@ void stair_case(int x, int n, int *ans)
     {
         return 0;
     }
-    if (ans[x] != -1) // that means ans[n] phle calculate ho chuka hai
+    if (ans[x] != -1)
     {
         return ans[x];
     }
-    // agar cantrol yaha aaya mtlb ans[n] phle calculate nai hua hoga
-    // that means calculate it and store it
-    sum += stair_case(x + 1, n);
-    sum += stair_case(x + 2, n);
-    sum += stair_case(x + 3, n);
+    sum += staircase_helper(x + 1, n, ans) % factor;
+    sum += staircase_helper(x + 2, n, ans) % factor;
+    sum = sum % factor; // hr sum ke baad %factor krna hota h,taki int ki range se bahar chla jaye
+    sum += staircase_helper(x + 3, n, ans) % factor;
+    sum = sum % factor;
     ans[x] = sum;
+    return ans[x];
+}
+int stair_case(int x, int n)
+{
+    int *ans = new int[n + 1];
+    for (int i = 0; i <= n; i++)
+    {
+        ans[i] = -1;
+    }
+    int solution = staircase_helper(x, n, ans);
+    return solution;
 }
 int main()
 {
@@ -34,14 +47,8 @@ int main()
     {
         int n;
         cin >> n;
-        int *ans = new int[n + 1];
-        for (int i = 0; i <= n; i++)
-        {
-            ans[i] = -1;
-        }
         int x = 0;
-        stair_case(x, n, ans);
-        cout << ans[n];
+        cout << stair_case(x, n) << endl;
         t--;
     }
     return 0;
