@@ -9,13 +9,10 @@ int balanced_BT(int h)
     {
         return 1;
     }
-    int mod = (int)(pow(10, 9)) + 7;
+
     int x = balanced_BT(h - 1);
     int y = balanced_BT(h - 2);
-    int temp1 = (int)(((long)(x)*x) % mod);
-    int temp2 = (int)((2 * (long)(x)*y) % mod);
-    int ans = (temp1 + temp2) % mod;
-    // int ans = x * x + 2 * x * y;
+    int ans = x * x + 2 * x * y;
     return ans;
 }
 int main()
